@@ -12,18 +12,16 @@ class JsonGuardExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-//        $loader = new YamlFileLoader(
-//            $container,
-//            new FileLocator(__DIR__ . '/../Resources/config')
-//        );
-//        $loader->load('services.yaml');
-//
-//        $processor = new Processor();
-//        $config = $processor->processConfiguration(new Configuration(), $configs);
-//
-//        $container->setParameter(
-//            'json_guard_bundle.json_schema_root_path',
-//            $config['json_guard_bundle']['json_schema_root_path']
-//        );
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__ . '/../Resources/config')
+        );
+        $loader->load('services.yaml');
+
+        $processor = new Processor();
+        $config = $processor->processConfiguration(new Configuration(), $configs);
+
+        $container->getDefinition(\JzpCoder\JsonGuard\Factory\JsonValidatorFactory::class)
+            ->setArgument(0, $config['json_schema_root_path']);
     }
 }
