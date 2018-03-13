@@ -1,5 +1,5 @@
 {
-    "name": "jzp-coder/json-guard-bundle",
+    "name": "jzp-coder/json-guard",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "JzpCoder\\JGBundle\\": "src"
+            "JzpCoder\\JsonGuard\\": "src"
         }
     },
     "minimum-stability": "stable",

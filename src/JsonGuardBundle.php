@@ -1,6 +1,6 @@
 <?php
 
-namespace JzpCoder\JGBundle;
+namespace JzpCoder\JsonGuard;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

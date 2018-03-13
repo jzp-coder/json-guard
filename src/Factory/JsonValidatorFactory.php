@@ -1,6 +1,6 @@
 <?php
 
-namespace JzpCoder\JGBundle\Factory;
+namespace JzpCoder\JsonGuard\Factory;
 
 class JsonValidatorFactory
 {

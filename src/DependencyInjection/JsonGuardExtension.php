@@ -1,6 +1,6 @@
 <?php
 
-namespace JzpCoder\JGBundle\DependencyInjection;
+namespace JzpCoder\JsonGuard\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
@@ -25,10 +25,5 @@ class JsonGuardExtension extends Extension
 //            'json_guard_bundle.json_schema_root_path',
 //            $config['json_guard_bundle']['json_schema_root_path']
 //        );
-    }
-
-    public function getAlias()
-    {
-        return 'json_guard_bundle';
     }
 }

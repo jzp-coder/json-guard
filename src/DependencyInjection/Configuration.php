@@ -1,6 +1,6 @@
 <?php
 
-namespace JzpCoder\JGBundle\DependencyInjection;
+namespace JzpCoder\JsonGuard\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
