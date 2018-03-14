@@ -7,6 +7,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use JzpCoder\JsonGuard\Factory\JsonValidatorFactory;
 
 class JsonGuardExtension extends Extension
 {
@@ -21,7 +22,7 @@ class JsonGuardExtension extends Extension
         $processor = new Processor();
         $config = $processor->processConfiguration(new Configuration(), $configs);
 
-        $container->getDefinition(\JzpCoder\JsonGuard\Factory\JsonValidatorFactory::class)
+        $container->getDefinition(JsonValidatorFactory::class)
             ->setArgument(0, $config['json_schema_root_path']);
     }
 }

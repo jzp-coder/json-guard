@@ -15,6 +15,12 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('json_schema_root_path')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('cache')
+                    ->cannotBeEmpty()
+                ->end()
             ->end()
         ;
 
