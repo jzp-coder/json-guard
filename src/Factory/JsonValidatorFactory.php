@@ -2,12 +2,12 @@
 
 namespace JzpCoder\JsonGuard\Factory;
 
+use JzpCoder\JsonGuard\Constraint\IsNumeric;
+use League\JsonGuard\Assert;
+use League\JsonGuard\RuleSet\DraftFour;
 use League\JsonGuard\Validator;
 use League\JsonReference\JsonDecoder\JsonDecoder;
-use League\JsonReference\Loader\CurlWebLoader;
-use League\JsonReference\Loader\FileGetContentsWebLoader;
 use League\JsonReference\Loader\FileLoader;
-use League\JsonReference\LoaderManager;
 
 class JsonValidatorFactory
 {
@@ -28,6 +28,11 @@ class JsonValidatorFactory
         $loader = new FileLoader(new JsonDecoder());
         $schema = $loader->load($this->schemaRootPath . $filename . '.json');
 
-        return new Validator(json_decode($data), $schema);
+        $ruleset = new DraftFour();
+        $ruleset->set('isNumeric', function() {
+            return new IsNumeric();
+        });
+
+        return new Validator(json_decode($data), $schema, $ruleset);
     }
 }
