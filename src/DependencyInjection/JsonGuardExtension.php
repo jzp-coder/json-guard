@@ -2,12 +2,12 @@
 
 namespace JzpCoder\JsonGuard\DependencyInjection;
 
+use JzpCoder\JsonGuard\Builder\JsonValidatorBuilder;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use JzpCoder\JsonGuard\Factory\JsonValidatorFactory;
 
 class JsonGuardExtension extends Extension
 {
@@ -22,7 +22,7 @@ class JsonGuardExtension extends Extension
         $processor = new Processor();
         $config = $processor->processConfiguration(new Configuration(), $configs);
 
-        $container->getDefinition(JsonValidatorFactory::class)
+        $container->getDefinition(JsonValidatorBuilder::class)
             ->setArgument(0, $config['json_schema_root_path']);
     }
 }

@@ -1,2 +1,2 @@
 services:
-    JzpCoder\JsonGuard\Factory\JsonValidatorFactory: ~
+    JzpCoder\JsonGuard\Builder\JsonValidatorBuilder: ~
