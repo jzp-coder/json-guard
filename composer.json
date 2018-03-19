@@ -22,6 +22,6 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpspec/phpspec": "^4.3"
     }
 }

@@ -1,0 +1,4 @@
+suites:
+    default:
+        namespace: JzpCoder\JsonGuard
+        psr4_prefix: JzpCoder\JsonGuard

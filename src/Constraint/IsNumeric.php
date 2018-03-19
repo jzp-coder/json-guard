@@ -16,6 +16,6 @@ class IsNumeric implements ConstraintInterface
             return null;
         }
 
-        return error('The value must be a numeric', $validator);
+        return error('The value must be numeric', $validator);
     }
 }
