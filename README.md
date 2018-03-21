@@ -6,13 +6,13 @@ This bundle integrates `league/json-guard` with Symfony and offers a light build
 `composer require jzp-coder/json-guard`
 ### Configuration
 For now, the bundle requires only the folder path where the JSON schemas are stored:
-```
+```yaml
 json_guard:
     json_schema_root_path: '%kernel.root_dir%/../config/schemas/'
 ```
 ### Usage
 Assuming that the `json_schema_root_path` is set and inside is a `test.json` schema, you could use the JSON builder like this:
-```
+```php
     public function test(\JzpCoder\JsonGuard\Builder\JsonValidatorBuilder $builder)
     {
         $data = <<<EOF
@@ -28,7 +28,7 @@ EOF;
     }
 ```   
 There's also a new constraint added, `isNumeric`, which validates that a value is numeric or not. So, `'123'` and `123` values will pass, but if `isNumeric` is set to `false`, then `123` and `'123'` values will not pass. See a small example of JSON schema below:
-```
+```json
 {
     "properties": {
         "eanCode": {
